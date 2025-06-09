@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "module": "esnext",
+        "jsx": "react-jsx", // Penting untuk React
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "bundler", // Atau "node" tergantung Vite Anda
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "baseUrl": "./", // Penting untuk path aliases
+        "paths": {
+            "@/*": [
+                "resources/js/*"
+            ]
+        }
+    },
+    "include": ["resources/js/**/*.ts", "resources/js/**/*.tsx"], // Pastikan ini mencakup file React Anda
+    "exclude": ["node_modules", "public"]
+}
