@@ -14,11 +14,4 @@ use App\Http\Controllers\Web\HomeController; // Pastikan ini diimport
 |
 */
 
-// Ini adalah rute yang akan me-render komponen Inertia 'Welcome'
-Route::get('/', [HomeController::class, 'welcome']);
-
-// Anda bisa menambahkan rute web lainnya di sini jika diperlukan
-// Contoh:
-// Route::get('/about', function () {
-//     return Inertia::render('AboutPage');
-// });
+Route::get('/', [HomeController::class, 'welcome']); // Ini akan merender komponen Inertia

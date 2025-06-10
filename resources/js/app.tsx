@@ -1,21 +1,17 @@
-import './bootstrap'; // Jika Anda punya file bootstrap.js/ts untuk inisialisasi Laravel
-import '../css/app.css'; // Untuk CSS Anda
+import './bootstrap'; // Atau './bootstrap.ts' jika Anda ganti nama
+import '../css/app.css';
 
 import { createRoot } from 'react-dom/client';
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 
 createInertiaApp({
-    // Judul halaman di browser
     title: (title) => `${title} - Your App Name`,
-    // Fungsi untuk me-resolve komponen halaman
-    resolve: (name) => resolvePageComponent(`./Pages/${name}.tsx`, import.meta.glob('./Pages/**/*.tsx')),
-    // Setup aplikasi React
+    resolve: (name) => resolvePageComponent(`./Pages/${name}.tsx`, import.meta.glob('./Pages/**/*.tsx')), // Pastikan ini .tsx
     setup({ el, App, props }) {
         const root = createRoot(el);
         root.render(<App {...props} />);
     },
-    // Callback saat navigasi dimulai
     progress: {
         color: '#4B5563',
     },
